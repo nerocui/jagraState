@@ -1,0 +1,11 @@
+{
+  "name": "jagrastate",
+  "version": "1.0.1",
+  "description": "Redux State for Jagra React Web and React Native project",
+  "main": "index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "nero",
+  "license": "ISC"
+}
