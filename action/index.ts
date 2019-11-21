@@ -88,7 +88,6 @@ export function Login(username: string, password: string) {
 		Axios.post(RootUrl + '/api/auth/login', {username, password})
 			.then(res => {
 				const { token } = res.data;
-				localStorage.setItem('token', token);
 				dispatch(DispatchLogin(token));
 			})
 			.catch(err => {
@@ -99,7 +98,6 @@ export function Login(username: string, password: string) {
 
 export function Logout() {
 	return (dispatch: any) => {
-		localStorage.setItem('token', '');
 		dispatch(DispatchLogout());
 	};
 }
