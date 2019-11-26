@@ -136,3 +136,12 @@ export function FetchBingDaily() {
 			})
 	};
 }
+
+export function FetchWeather(api: string) {
+	return async (dispatch: any) => {
+		const res: any = await Axios.get('https://api.ipify.org/?format=json');
+		const address: any = await Axios.get('https://ipapi.co/' + res.data.ip + '/json');
+		const weather: any = await Axios.get('http://api.openweathermap.org/data/2.5/weather?q=' + address.data.city + '&appid=' + api);
+		//dispatch
+	};
+}
