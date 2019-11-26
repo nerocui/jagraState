@@ -12,3 +12,7 @@ export function hexToRgb(hex: string) {
       b: parseInt(result[3], 16)
     } : null;
 }
+
+export function capitalizeFirstLetter(name: string) {
+  return name[0].toUpperCase() + name.slice(1); 
+}
