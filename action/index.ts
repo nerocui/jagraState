@@ -46,6 +46,13 @@ function AddTask(task: any) {
 	};
 }
 
+function SetBingDaily(url: string) {
+	return {
+		type: TYPE.SET_BING_DAILY,
+		payload: url,
+	};
+}
+
 export function CreateTask(task: TaskForCreationDto) {
 	return (dispatch: any) => {
 		Axios.post(RootUrl + '/api/task/create', {...task})
@@ -115,4 +122,17 @@ export function ToggleTheme(loadTheme: any, value: any) {
 			dispatch(SetTheme('light'));
 		}
 	}
+}
+
+export function FetchBingDaily() {
+	return (dispatch: any) => {
+		Axios.get('https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1')
+			.then((res: any) => {
+				console.log(res);
+				dispatch(SetBingDaily('https://bing.com' + res.images[0].url))
+			})
+			.catch(err => {
+				console.log("Failed to fetch Bing Daily Image: ", err);
+			})
+	};
 }

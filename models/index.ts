@@ -12,6 +12,7 @@ export type AuthState = {
 
 export type ThemeState = {
 	theme: string,
+	backgroundImage: string,
 };
 
 export type OrganizationState = {
