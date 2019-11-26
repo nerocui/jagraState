@@ -1,6 +1,6 @@
 {
   "name": "jagrastate",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Redux State for Jagra React Web and React Native project",
   "main": "index.ts",
   "scripts": {
